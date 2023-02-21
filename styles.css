@@ -149,17 +149,6 @@ body{
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
 }
-
-.header{
-    border: 2px solid red;
-
-    grid-column: 2/-1;
-}
-
-.main-content-container{
-    border: 2px solid red;
-}
-
 /*----------------------------------------------------------------------------SIDEBAR---------------------------------------------------------------------------------*/
 .sidebar{
     border: 2px solid red;
@@ -179,3 +168,78 @@ body{
 .sidebar :last-child{
     align-self: end;
 }
+
+/*----------------------------------------------------------------------------HEADER---------------------------------------------------------------------------------*/
+.header{
+    border: 2px solid red;
+
+    grid-column: 2/-1;
+
+    display: grid;
+    /* grid-template-columns: 2fr 1fr; */
+    grid-template-rows: 1fr 1fr;
+}
+
+.searchNav, .infoNav{
+    background-color: blue;
+
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.searchNav >*, .infoNav >*{
+    display: flex;
+}
+
+.leftHeader{
+    justify-self: start;
+}
+
+.rightHeader{
+    justify-self: end;
+}
+
+/*----------------------------------------------------------------------------MAIN CONTENT---------------------------------------------------------------------------------*/
+/*LEFT*/ 
+
+.main-content-container{
+    border: 2px solid red;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.main-cards-left, .secondary-cards-right >div {
+    display: grid;
+    grid-template-rows: 1rem auto;
+    margin: 30px;
+}
+
+.articles{
+    display: grid;
+    overflow: auto;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cards{
+    padding: 10px;
+    /* margin: 20px; */
+    border: 2px solid red;
+}
+
+/*RIGHT*/
+.secondary-cards-right{
+    background-color: yellow;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+} 
+
+.secondary-cards-right > div >div{
+    /* grid + .main-cards-left*/
+    border: 2px solid black;
+    padding: 20px;
+} 
+
