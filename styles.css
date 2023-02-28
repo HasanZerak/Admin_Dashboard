@@ -137,11 +137,11 @@ table {
 
 /*----------------------------------------------------------------------------WRAPPER---------------------------------------------------------------------------------*/
 
-body{
+body {
     box-sizing: border-box;
 }
 
-.container{
+.container {
     width: 100vw;
     height: 100vh;
 
@@ -149,28 +149,50 @@ body{
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
 }
-/*----------------------------------------------------------------------------SIDEBAR---------------------------------------------------------------------------------*/
-.sidebar{
-    border: 2px solid red;
 
+
+img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+}
+
+
+/*----------------------------------------------------------------------------SIDEBAR---------------------------------------------------------------------------------*/
+.sidebar {
     grid-row: 1/-1;
 
     display: grid;
-    grid-template-rows: 1fr 6fr 3fr;
+    grid-template-rows: 1fr 8fr 4fr;
 
     background-color: red;
+
+    padding: 1.5rem;
 }
 
-.sidebar > p{
-    font-size: 2rem;
-}
+.sidebar >p {
+     font-size: 5rem; 
+} 
 
-.sidebar :last-child{
+.sidebar >div:last-child {
     align-self: end;
 }
 
+.sidebar >div:first-child{
+    display: grid;
+    align-items: center;
+
+    font-size: 2.5rem;
+}
+
+li {
+    display: flex;
+    gap: 20px;
+    margin: 1.5rem 0;
+}
+
 /*----------------------------------------------------------------------------HEADER---------------------------------------------------------------------------------*/
-.header{
+.header {
     border: 2px solid red;
 
     grid-column: 2/-1;
@@ -180,42 +202,44 @@ body{
     grid-template-rows: 1fr 1fr;
 }
 
-.searchNav, .infoNav{
+.searchNav,
+.infoNav {
     background-color: blue;
 
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.searchNav >*, .infoNav >*{
+.searchNav>*,
+.infoNav>* {
     display: flex;
 }
 
-.leftHeader{
+.leftHeader {
     justify-self: start;
 }
 
-.rightHeader{
+.rightHeader {
     justify-self: end;
 }
-
 /*----------------------------------------------------------------------------MAIN CONTENT---------------------------------------------------------------------------------*/
-/*LEFT*/ 
+/*LEFT*/
 
-.main-content-container{
+.main-content-container {
     border: 2px solid red;
 
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
 
-.main-cards-left, .secondary-cards-right >div {
+.main-cards-left,
+.secondary-cards-right>div {
     display: grid;
     grid-template-rows: 1rem auto;
     margin: 30px;
 }
 
-.articles{
+.articles {
     display: grid;
     overflow: auto;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
@@ -223,23 +247,33 @@ body{
     gap: 20px;
 }
 
-.cards{
+.cards {
+    background-image: url("images/thomas-de-luze-XJT-MAePgIk-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.7;
+
     padding: 10px;
     /* margin: 20px; */
     border: 2px solid red;
 }
 
 /*RIGHT*/
-.secondary-cards-right{
+.secondary-cards-right {
     background-color: yellow;
 
     display: grid;
     grid-template-rows: 1fr 1fr;
-} 
+}
 
-.secondary-cards-right > div >div{
+.secondary-cards-right>div>div {
     /* grid + .main-cards-left*/
     border: 2px solid black;
     padding: 20px;
-} 
+}
 
+.trending-card>div>div {
+    background-color: pink;
+    display: flex;
+}
