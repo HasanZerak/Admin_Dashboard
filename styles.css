@@ -148,28 +148,28 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 7fr;
-    grid-template-rows: 1fr 7fr;
+    grid-template-rows: 1fr 1fr;
 
     gap: 1rem;
 }
 
 
-img {
+.left-header >img, .trending-card >div>div>img {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 100%;
 }
 
-hr{
+hr {
     border: 1px solid black;
     width: 95%;
 }
 
-a{
+a {
     color: black;
 }
 
-a:hover{
+a:hover {
     color: blue;
     transition: 0.1s;
 }
@@ -179,18 +179,14 @@ a:hover{
     grid-row: 1/-1;
 
     display: grid;
-    grid-template-rows: 1fr 8fr 4fr;
+    grid-template-rows: 7% 2fr 5fr;
 
     background-color: red;
 
     padding: 1rem;
 }
 
-.sidebar >div:last-child {
-    align-self: end;
-}
-
-.sidebar >div:first-child {
+.sidebar>div:first-child {
     display: grid;
     align-items: center;
     justify-items: center;
@@ -225,10 +221,10 @@ li {
 
 .left-header {
     flex: 1;
-    
 }
 
-.left-header p, .left-header span{
+.left-header p,
+.left-header span {
     /* border-right: thin solid black; */
     padding-right: 1rem;
 
@@ -236,21 +232,21 @@ li {
     align-items: center;
 }
 
-button{
+button {
     appearance: none;
 
     border: none;
     background-color: blue;
-    font-size: 1rem;    
+    font-size: 1rem;
 }
 
-button:hover{
+button:hover {
     transition: 0.2s;
     cursor: pointer;
     color: red;
 }
 
-input{
+input {
     appearance: none;
 
     transition: 0.3s;
@@ -261,25 +257,25 @@ input{
 
     border: none;
     border-radius: 5rem;
-    
+
     background-color: red;
     background-image: url("images/search_FILL0_wght400_GRAD0_opsz40.svg");
-    background-position:  center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 1.5rem;
-    
+
     box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
 
-  }
+}
 
-  input:focus{
+input:focus {
     width: 24rem;
     height: 0.5rem;
     transition: width 0.5s ease-out;
     padding: 1rem;
     background-image: none;
     border-radius: 5rem;
-  }
+}
 
 
 /*----------------------------------------------------------------------------MAIN CONTENT---------------------------------------------------------------------------------*/
@@ -290,33 +286,76 @@ input{
 
     display: grid;
     grid-template-columns: 3fr 1fr;
+
+    gap: 1.5rem;
 }
 
 .main-cards-left,
 .secondary-cards-right>div {
     display: grid;
     grid-template-rows: 1rem auto;
-    margin: 30px;
+
+    gap: 1.5rem;
+}
+
+.main-cards-left >p{
+    font-size: 1.25rem;
 }
 
 .articles {
     display: grid;
     overflow: auto;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-rows: repeat(3, 22rem);
+    gap: 3rem;
 }
 
 .cards {
-    background-image: url("images/thomas-de-luze-XJT-MAePgIk-unsplash.jpg");
+    /* background-image: url("images/thomas-de-luze-XJT-MAePgIk-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    opacity: 0.7;
+    opacity: 0.7; */
 
-    padding: 10px;
-    /* margin: 20px; */
+    padding: 1.75rem;
     border: 2px solid red;
+
+    display: grid;
+    grid-template-rows: 2fr 5fr 1fr;
+    gap: 1rem;
+
+    border-left: 0.5rem solid green;
+    border-radius: 0.8rem;
+}
+
+.cards >img{
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cards >div:first-of-type{
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.cards >div:last-of-type{
+    display: flex;
+    justify-content: right;
+    gap: 2rem;
+}
+
+.cards >div:first-of-type>p:first-of-type{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cards >div:first-of-type>p:last-of-type{
+    font-size: 0.9rem;
 }
 
 /*RIGHT*/
