@@ -140,6 +140,7 @@ table {
 
 body {
     box-sizing: border-box;
+    font-size: 0.9rem;
 }
 
 .container {
@@ -148,13 +149,18 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 7fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 8fr;
 
-    gap: 1rem;
+    /* overflow: hidden; */
+    /* min-height: 0px; */
+
+    gap: 1.5rem;
+    row-gap: 3rem;
 }
 
 
-.left-header >img, .trending-card >div>div>img {
+.left-header>img,
+.trending-card>div>div>img {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 100%;
@@ -194,6 +200,10 @@ a:hover {
     font-size: 1.75rem;
 }
 
+.sidebar>div:last-child{
+    height: min-content;
+}
+
 li {
     display: flex;
     gap: 1rem;
@@ -216,7 +226,9 @@ li {
     background-color: blue;
     padding: 0 1rem;
     margin: 1rem 1rem 1rem 0;
-    border-radius: 6px;
+    border-radius: 0.5rem;
+
+    height: 100%;
 }
 
 .left-header {
@@ -279,13 +291,14 @@ input:focus {
 
 
 /*----------------------------------------------------------------------------MAIN CONTENT---------------------------------------------------------------------------------*/
-/*LEFT*/
+/******************LEFT******************/
 
 .main-content-container {
-    border: 2px solid red;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
+
+    margin-right: 1rem;
 
     gap: 1.5rem;
 }
@@ -298,7 +311,8 @@ input:focus {
     gap: 1.5rem;
 }
 
-.main-cards-left >p{
+.main-cards-left>p,
+.secondary-cards-right>div>p:first-of-type {
     font-size: 1.25rem;
 }
 
@@ -326,9 +340,11 @@ input:focus {
 
     border-left: 0.5rem solid green;
     border-radius: 0.8rem;
+
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
-.cards >img{
+.cards>img {
     object-fit: cover;
     width: 100%;
     max-height: 100%;
@@ -337,42 +353,67 @@ input:focus {
     box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
-.cards >div:first-of-type{
+.cards>div:first-of-type {
     margin-top: 0.5rem;
     display: grid;
     grid-template-rows: 1fr 5fr;
 }
 
-.cards >div:last-of-type{
+.cards>div:last-of-type {
     display: flex;
     justify-content: right;
     gap: 2rem;
 }
 
-.cards >div:first-of-type>p:first-of-type{
+.cards>div:first-of-type>p:first-of-type {
     font-weight: bold;
     font-size: 1rem;
 }
 
-.cards >div:first-of-type>p:last-of-type{
+.cards>div:first-of-type>p:last-of-type {
     font-size: 0.9rem;
 }
 
-/*RIGHT*/
+/*****************RIGHT****************/
 .secondary-cards-right {
-    background-color: yellow;
-
     display: grid;
     grid-template-rows: 1fr 1fr;
+
+    height: max-content;
 }
 
-.secondary-cards-right>div>div {
+.secondary-cards-right>div>div:first-of-type {
     /* grid + .main-cards-left*/
-    border: 2px solid black;
-    padding: 20px;
+    /* border: 2px solid black; */
+    padding: 1.5rem 2rem 2rem;
+    margin: 0 0 2rem;
+    background-color: green;
+
+    border-radius: 0.5rem;
+
+    height: fit-content;
+
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.secondary-cards-right >div:first-of-type >div p:first-of-type {
+    font-weight: bold;
+    /* font-size: 1rem; */
+    padding: 1rem  0.5rem 0.5rem;
+}
+
+.secondary-cards-right >div:first-of-type >div p:last-of-type{
+    padding: 0 0.5rem;
 }
 
 .trending-card>div>div {
-    background-color: pink;
     display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.trending-card>div>div p:first-of-type{
+    font-weight: bold;
 }
