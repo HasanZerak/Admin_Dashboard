@@ -161,8 +161,8 @@ body {
 
 .left-header>img,
 .trending-card>div>div>img {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 100%;
 }
 
@@ -349,7 +349,7 @@ input:focus {
 .cards>img {
     object-fit: cover;
     width: 100%;
-    max-height: 100%;
+    /* max-height: 80px; */
 
     border-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2); */
@@ -376,13 +376,16 @@ input:focus {
     font-size: 0.9rem;
 }
 
+.articles>div:last-of-type{
+    margin-bottom: 2rem;
+}
 /*****************RIGHT****************/
-.secondary-cards-right {
+/* .secondary-cards-right {
     /* display: grid;
     grid-template-rows: 1fr 1fr;
 
-    height: max-content; */
-}
+    height: max-content; 
+} */
 
 .secondary-cards-right>div>div:first-of-type {
     /* grid + .main-cards-left*/
@@ -412,15 +415,12 @@ input:focus {
     gap: 1rem;
     padding: 0.6rem;
     font-size: 0.9rem;
-
-    margin-bottom: 1.5rem;
+    /* background-color: red; */
+    margin-bottom: 1rem;
 }
 
-.trending-card>div div{
-    background-color: red;
-    /* margin-bottom: 1rem; */
-}
 
 .trending-card>div>div p:first-of-type {
-    font-weight: bold;
+    margin-bottom: 0.2rem;
+    font-size: small;
 }
