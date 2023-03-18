@@ -141,6 +141,10 @@ table {
 body {
     box-sizing: border-box;
     font-size: 0.9rem;
+    background-color: #F6F1F1;
+    color: rgba(25, 24, 37, 0.7);
+    line-height: 1.2;
+    letter-spacing: 1px;
 }
 
 .container {
@@ -167,8 +171,9 @@ body {
 }
 
 hr {
-    border: 1px solid black;
+    border: 1px solid rgba(20, 108, 148, 0.8);
     width: 95%;
+    margin: 1.2rem 0;
 }
 
 a {
@@ -176,28 +181,33 @@ a {
 }
 
 a:hover {
-    color: blue;
+    color: rgba(34, 34, 34, 1);
     transition: 0.1s;
 }
 
 /*----------------------------------------------------------------------------SIDEBAR---------------------------------------------------------------------------------*/
 .sidebar {
     grid-row: 1/-1;
+    color: #FFFBF5;
 
     display: grid;
-    grid-template-rows: 7% 2fr 5fr;
+    grid-template-rows: 1fr 10fr 30fr;
 
-    background-color: red;
+    background-color: #146C94;
 
-    padding: 1rem;
+    padding: 1.5rem;
+    line-height: 1.5;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-.sidebar>div:first-child {
+.sidebar>div:first-of-type {
     display: grid;
     align-items: center;
     justify-items: center;
-    padding-top: 0.75rem;
-    font-size: 1.75rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.35rem;
 }
 
 .sidebar>div:last-child {
@@ -207,9 +217,15 @@ a:hover {
 li {
     display: flex;
     gap: 1rem;
-    align-items: center;
-    margin: 1.25rem 0;
+    margin: 1rem 0;
+    color: #FFFBF5;
     /* margin-left: 1.5rem; */
+}
+
+li>a {
+    color: #FFFBF5;
+    display: flex;
+    line-height: 2;
 }
 
 /*----------------------------------------------------------------------------HEADER---------------------------------------------------------------------------------*/
@@ -223,7 +239,7 @@ li {
 }
 
 .header {
-    background-color: blue;
+    background-color: #FFFBF5;
     padding: 0 1rem;
     margin: 1rem 1rem 1rem 0;
     border-radius: 0.5rem;
@@ -239,38 +255,42 @@ li {
 .left-header span {
     /* border-right: thin solid black; */
     padding-right: 1rem;
-
     display: flex;
     align-items: center;
+}
+
+.left-header p{
+    font-size: 1.1rem;
+    color: rgba(25, 24, 37, 1)
 }
 
 button {
     appearance: none;
 
     border: none;
-    background-color: blue;
+    background-color: transparent;
     font-size: 1rem;
 }
 
 button:hover {
-    transition: 0.2s;
+    transition: 0.15s;
     cursor: pointer;
-    color: red;
+    color: #146C94;
 }
 
 input {
     appearance: none;
 
     transition: 0.3s;
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
 
     outline: none;
 
     border: none;
     border-radius: 5rem;
 
-    background-color: red;
+    background-color: #146C94;
     background-image: url("images/search_FILL0_wght400_GRAD0_opsz40.svg");
     background-position: center;
     background-repeat: no-repeat;
@@ -287,6 +307,7 @@ input:focus {
     padding: 1rem;
     background-image: none;
     border-radius: 5rem;
+    background-color: #F6F1F1;
 }
 
 
@@ -313,7 +334,8 @@ input:focus {
 
 .main-cards-left>p,
 .secondary-cards-right>div>p:first-of-type {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    font-weight: bold;
 }
 
 .articles {
@@ -333,14 +355,14 @@ input:focus {
     background-position: center center;
     opacity: 0.7; */
 
-    padding: 1.75rem;
-    /* border: 2px solid red; */
+    padding: 1.5rem 1.75rem 1.75rem;
+    background-color: #FFFBF5;
 
     display: grid;
-    grid-template-rows: 2fr 5fr 1fr;
-    gap: 1rem;
+    grid-template-rows: 3fr 5fr 1fr;
+    /* gap: 1rem; */
 
-    border-left: 0.5rem solid green;
+    border-left: 0.5rem solid #146C94;
     border-radius: 0.8rem;
 
     box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
@@ -349,16 +371,17 @@ input:focus {
 .cards>img {
     object-fit: cover;
     width: 100%;
-    /* max-height: 80px; */
+    max-height: 100%;
 
     border-radius: 5px;
-    /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2); */
+    box-shadow: 1px 1px 4px 0.8px rgba(0, 0, 0, 0.2);
 }
 
 .cards>div:first-of-type {
-    margin-top: 0.5rem;
-    display: grid;
-    grid-template-rows: 1fr 5fr;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .cards>div:last-of-type {
@@ -373,12 +396,21 @@ input:focus {
 }
 
 .cards>div:first-of-type>p:last-of-type {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
-.articles>div:last-of-type{
+.cards:hover {
+    /* border: 1px solid red; */
+    border-left: 0.5rem solid #19A7CE;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 2px 2px 2px 1px rgba(20, 108, 148, 0.2);
+}
+
+.articles>div:last-of-type {
     margin-bottom: 2rem;
 }
+
 /*****************RIGHT****************/
 /* .secondary-cards-right {
     /* display: grid;
@@ -390,9 +422,9 @@ input:focus {
 .secondary-cards-right>div>div:first-of-type {
     /* grid + .main-cards-left*/
     /* border: 2px solid black; */
-    padding: 1.5rem 2rem 2.5rem;
-    margin: 0 0 2rem;
-    background-color: green;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    background-color: #FFFBF5;
 
     border-radius: 0.5rem;
 
@@ -401,12 +433,13 @@ input:focus {
 
 .secondary-cards-right>div:first-of-type>div p:first-of-type {
     font-weight: bold;
-    /* font-size: 1rem; */
-    padding: 1rem 0.5rem 0.5rem;
+    font-size: 0.87rem;
+    padding: 0rem 0.5rem 0.25rem;
 }
 
 .secondary-cards-right>div:first-of-type>div p:last-of-type {
     padding: 0 0.5rem;
+    font-size: 0.8rem;
 }
 
 .trending-card>div>div {
@@ -414,7 +447,7 @@ input:focus {
     align-items: center;
     gap: 1rem;
     padding: 0.6rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     /* background-color: red; */
     margin-bottom: 1rem;
 }
@@ -423,4 +456,5 @@ input:focus {
 .trending-card>div>div p:first-of-type {
     margin-bottom: 0.2rem;
     font-size: small;
+    font-weight: bold;
 }
